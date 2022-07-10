@@ -1,0 +1,199 @@
+/*------------------  media query  ------------------------------*/
+
+@media only screen and (max-width: 600px) {
+
+
+    .sidepanel {
+        height: fit-content;
+        /* Specify a height */
+        width: 0;
+        /* 0 width - change this with JavaScript */
+        /*   position: fixed; /* Stay in place */
+        z-index: 1;
+        /* Stay on top */
+        top: 0;
+        direction: rtl;
+        right: 0;
+        position: absolute;
+
+
+        /* left: 0; */
+        background-color: #4E7FBF;
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-top: 14px;
+        /* Place content 60px from the top */
+        transition: 0.5s;
+        /* 0.5 second transition effect to slide in the sidepanel */
+    }
+
+   
+}
+
+
+@media only screen and (max-width: 1404px) {
+
+
+    .hiddenb {
+        display: none !important;
+        
+      }
+      
+
+
+
+}
+
+
+@media only screen and (max-width: 1150px) {
+
+
+    .content-intro {
+        flex-direction: column;
+    }
+    .hiddenb{
+        display: none !important;
+    }
+
+  
+
+    .twoinone {
+        width: 100%;
+      
+    }
+
+
+  
+    .boxpe {
+        justify-content: space-between;
+    }
+
+    hr {
+        display: none;
+    }
+
+    /* icons  */
+    .color1 {
+        font-size: 3rem;
+        color: #4E7FBF;
+        margin-right: 0.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+
+    }
+
+    .color2 {
+
+        color: #404040;
+        margin-right: 0.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .slidersec {
+        width: 100%;
+    }
+
+    .piktossec {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .flex3 {
+        display: block;}
+        .contactbox  {
+            display: block;}
+    
+    
+    }
+
+
+
+    .twoinone h2 {
+        font-size: 2rem;
+        white-space: normal;
+        overflow: auto;
+        
+
+    }
+
+    .piktossec {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+
+    .boxpe img {
+        width: 40%;
+
+       
+    }
+
+    h1 {
+        white-space: unset !important;
+    }
+
+
+    h3 {
+        font-size: large;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 280px) {
+
+
+    .piktossec {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 2rem;
+
+
+    }
+
+
+}
+
+@media only screen and (max-width: 1169px) {
+
+
+   
+
+    img , carousel, iframe {
+        filter: grayscale(0);
+      }
+      
+      img:hover , carousel:hover, iframe:hover {
+        filter: grayscale(0);
+      }
+
+      #videos iframe{
+        filter: grayscale(0);
+
+      }
+
+      .typingsec {
+        padding: 0 2rem;
+
+    }
+
+    .piktossec {
+        text-align: center;
+    }
+
+     
+      
+}
+

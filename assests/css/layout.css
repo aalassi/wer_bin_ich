@@ -1,0 +1,1077 @@
+/* =========================================================
+Stylesheet für Wer bin ich Projekt
+Datei: layout.css
+Datum: 30.juni 2022
+Autor: Ahmad Khalil Al Assi
+Aufbau: 
+1. Zeichensatz definieren
+2.  css reset 
+3.  Allgemeine Styles
+4.  nav & header
+--------------
+5.  section-intro
+6.  slider
+----------
+7.  photography section
+8.  
+
+
+========================================================== */
+
+
+/* ---------------- Zeichensatz definieren ------------------ */
+
+@charset "utf-8";
+
+
+/*------------------  css reset  ------------------------------*/
+
+* { 
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*------------------  Allgemeine Styles  ------------------------------*/
+
+:root {
+  --mainBlau : #4E7FBF;
+  --mainGrau : #F2F2F2 ;
+  --darkGrau : #BFBFBF ;
+  --dunkelGrau : #404040;
+  --sekBlau :  #508BBF;
+  --closeFarbe : deeppink;
+  --mainMarginTop: 3rem;
+
+
+}
+
+
+
+body{
+    background-color: var(--mainGrau);
+    font-family: new-hero, sans-serif !important;
+    color: var(--mainBlau);
+
+
+}
+
+/* class background grau */
+.bkgrey {
+  background-color: var(--darkGrau);
+  color: var(--mainGrau);
+  padding-top: 3rem ;
+
+  background: url(/assests/img/codebk.svg) no-repeat ;
+ 
+  /* padding: 5rem ; */
+}
+
+/* class bk mainGrau */
+
+/* .cl-1 { */
+ /*  background-color: var(--mainGrau); */
+/*   color: var(--mainBlau);
+  border-radius: 7px;
+        
+    border-left: 20px solid var(--mainBlau); 
+   border-right: 20px solid var(--dunkelGrau);   ;
+}
+ */
+
+/*  style section title  ---------*/
+
+.sec-title {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 3rem;
+ 
+  
+}
+
+h3 {
+  
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  display: inline-block;
+ 
+  border: 20px dotted var(--mainBlau);
+  color: var(--dunkelGrau);
+  
+  
+  
+}
+
+/* style button  */
+button {
+  color: var(--mainBlau) !important;
+  background-color: var(--mainBlau);
+}
+
+
+
+
+
+/* selcted text color  */
+::selection {  background: var(--darkGrau);
+    color: var(--mainBlau); }
+
+  
+    /* cursor  */
+   
+   
+    /* cursor end  */
+
+p::selection {
+    background: var(--darkGrau);
+    color: var(--mainBlau);
+    border: 10px dotted var(--dunkelGrau);
+  }
+
+.wrapper {
+/*   min-width: 320px; */
+	max-width: 1200px;
+	margin:0 auto;
+}
+
+/* hr line effect */ 
+hr {
+  border: 1px solid var(--mainBlau);
+  width: 50%;
+  transition: 0.3s;
+  direction: rtl;
+  margin-left: 18rem;
+  height: 5px;
+}
+
+
+
+.content-intro:hover hr  {
+  width: 100%;
+  margin-left: 0rem;
+  height: 5px;
+  transition: all .2s ease-in-out;
+
+}
+
+
+
+
+
+/* scroll color  */
+.scrollable-element {
+  scrollbar-color: var(--mainGrau) var(--dunkelGrau);
+}
+
+/* reset bootstrap headings  */ 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-weight:bold;
+  line-height: 1.2;
+}
+
+
+/* allgemein pics effect  */
+
+img , carousel, iframe {
+  filter: grayscale(100%);
+}
+
+/* img:hover , carousel:hover, iframe:hover {
+  filter: grayscale(0);
+  transition: all .2s ease-in-out;
+} */
+.content-intro:hover img ,  iframe {
+  filter: grayscale(0);
+  transition: all .2s ease-in-out;
+}
+
+
+/* hr effect  */
+
+/* hr {
+  border:none;
+  height: 20px;
+  width: 90%;
+  height: 50px;
+  margin-top: 0;
+  border-bottom: 1px solid #1f1209;
+  box-shadow: 0 20px 20px -20px #333;
+  margin: -50px auto 10px; 
+} */
+/* 
+hr effect end  */
+
+
+/* allgemein vertical margin zwischen sections  */
+
+.vrt {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 2rem;
+}
+
+/*------------------ nav & header ------------------------------*/
+
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+}
+
+
+
+header {
+  background-color: var(--mainBlau)  !important;
+  box-shadow: 0 7px 7px var(--darkGrau);
+}
+
+
+/* logo ---------*/
+
+#logo {
+  align-self: center;
+  background: url(../img/logo.svg);
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 0.3rem;
+  
+}
+
+
+
+
+
+
+/*--------- hamburger start ------------------ */
+
+
+.sec-center {
+  position: relative;
+  z-index: 200;
+  align-self: center;
+  margin-right: 20px;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+ .fa-bars {
+  font-size: 4rem;
+}
+
+
+
+.dropdown:checked + label,
+.dropdown:not(:checked) + label{
+  position: relative;
+  height: 50px;
+  transition: all 200ms linear;
+  width: 120px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  align-items: right;
+  justify-content: right;
+  text-align: right;
+  border: none;
+  cursor: pointer;
+  color: var(--mainGrau);
+  font-size: 2rem;
+  
+}
+
+
+/* animation button  */
+
+
+
+
+/* 
+animation button  */
+
+.dropdown:checked + label:before,
+.dropdown:not(:checked) + label:before{
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.dropdown:checked + label:before{
+  pointer-events: auto;
+}
+
+.dropdown:not(:checked) + label .uil {
+  font-size: 24px;
+  margin-left: 10px;
+  transition: transform 200ms linear;
+}
+
+/* effect when checked  */
+.dropdown:checked + label .uil {
+  transform: rotate(0.5turn);
+  outline: 4px solid var(--closeFarbe);
+  /* color: red; */
+  font-size: 24px;
+  margin-left: 10px;
+  transition: transform 200ms linear;
+}
+
+.section-dropdown {
+  position: absolute;
+  padding: 6px;
+  background-color: var(--mainBlau);
+/*   top: 70px;
+  left: 0; */
+  /* width: 100%; */
+ /*  border-radius: 4px; */
+  display: block;
+  box-shadow: 0 14px 35px 0 var(--dunkelGrau);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 200ms linear;
+}
+
+/* .dark-light:checked ~ .sec-center .section-dropdown {
+  background-color: #4E7FBF;
+  box-shadow: 0 14px 35px 0 #4E7FBF;
+} */
+
+/* when checked trigger */
+.dropdown:checked ~ .section-dropdown{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* .section-dropdown:before {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  content: '';
+  display: block;
+  z-index: 1;
+}
+ */
+
+/* arrow up  */
+.section-dropdown:after {
+  position: absolute;
+  top: -1px;
+  left: 70px;
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent; 
+  border-bottom: 8px solid var(--mainGrau);
+  content: '';
+  display: block;
+  z-index: 2;
+  transition: all 200ms linear;
+}
+
+/* .dark-light:checked ~ .sec-center .section-dropdown:after {
+  border-bottom: 8px solid #fff;
+} */
+
+.section-dropdown a {
+  display: block;
+  position: relative;
+  color: var(--mainGrau);
+  transition: all 200ms linear;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 1rem;
+  /* border-radius: 2px;
+  padding: 5px 0;
+  padding-left: 20px;
+  padding-right: 15px;
+  margin: 2px 0;
+  text-align: left;
+  text-decoration: none;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+    -ms-flex-pack: distribute; */
+}
+
+/* .dark-light:checked ~ .sec-center .section-dropdown a {
+  color: #4E7FBF;
+} */
+
+/* a:hover {
+  color: #4E7FBF;
+  background-color: #F2F2F2;
+} */
+
+/* .dark-light:checked ~ .sec-center .section-dropdown a:hover {
+  color: #F2F2F2;
+  background-color: #4E7FBF;
+} */
+
+/* a .uil {
+  font-size: 22px;
+} */
+
+/* .dropdown-sub:checked + label,
+.dropdown-sub:not(:checked) + label{
+  position: relative;
+  color: #F2F2F2;
+  transition: all 200ms linear;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 2px;
+  padding: 5px 0;
+  padding-left: 20px;
+  padding-right: 15px;
+  text-align: left;
+  text-decoration: none;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+    -ms-flex-pack: distribute;
+    cursor: pointer;
+} */
+
+/* .dropdown-sub:checked + label .uil,
+.dropdown-sub:not(:checked) + label .uil{
+  font-size: 22px;
+} */
+
+/* .dropdown-sub:not(:checked) + label .uil {
+  transition: transform 200ms linear;
+}
+ */
+/* .dropdown-sub:checked + label .uil {
+  transform: rotate(135deg);
+  transition: transform 200ms linear;
+}
+ */
+
+.section-dropdown ul {
+  list-style: none;
+}
+
+.section-dropdown ul li {
+  padding-top: 1rem;
+}
+
+.section-dropdown ul a:hover {
+  background-color: var(--mainGrau);
+  transition: all .1s ease-in-out;
+ 
+  
+}
+
+.section-dropdown ul li a:hover , .section-dropdown ul li a:active, .section-dropdown ul li a:focus{
+  background-color: var(--mainGrau);
+  transition: all .1s ease-in-out;
+  
+  color: var(--mainBlau);
+}
+
+
+.openbtn:hover {
+  background-color: var(--darkGrau);
+}
+
+ol, ul {
+  padding-left: 0rem;
+}
+
+
+
+/* end */
+
+
+
+
+
+
+/*------------------ section intro  ------------------------------*/
+
+/* passiedo element  */
+.hiddenb {
+  display: block;
+  position: absolute;
+  left: -150px;
+}
+
+.content-intro:hover .hiddenb { display: block;
+  position: absolute;
+  left: 50px;
+  transition: all .2s ease-in-out;
+  
+  
+  background-color: var(--mainBlau);
+
+
+  
+ 
+    color: var(--mainGrau);
+    transform: translateY(10px);
+transition: transform 0.2s, opacity 0.1s;
+transform: rotate(359deg);
+writing-mode: vertical-lr;
+font-size: xxx-large;
+}
+
+
+.content-intro {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.twoinone {
+  width: 50%;
+
+  
+
+}
+
+
+/* article wer bin ich -------- */
+h1 {
+    overflow: hidden;
+    /*border-right: .15em solid #404040;
+    */white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .10em;
+    animation:  typing 0.9s steps(21),                    
+                blinking 0.3s steps(1) ;
+    /*font-size: xx-large;
+    */
+}
+
+@keyframes typing {
+    0%  {
+        width: 0px;
+        }
+
+    80%  {
+      width: 50%;
+      
+      }
+  
+    100% {
+        width: 50%;
+        visibility: hidden;
+        }
+  }
+  @keyframes blinking {
+    0%, 100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--dunkelGrau);
+      }
+
+      100% {
+        display: none;
+        visibility: hidden;
+        }
+  }
+
+
+
+  .insidet {
+    
+    direction: rtl;
+    /* text-align: center; */
+    animation: typing2 steps(5) 0.8s      ;
+    
+}
+  
+  @keyframes typing2 {
+    0% {
+      color: var(--mainGrau);
+      background-color: var(--mainGrau);
+      width:0% ;
+    }
+  
+    100% {
+      color: var(--mainGrau);
+      background-color:var(--mainBlau);
+  
+      width:100%;
+    } }
+
+    .boxpe {
+      display: flex;
+      
+    }
+
+    /* profile pic --------- */
+
+
+
+     .boxpe img {
+      margin-top: 1rem;
+      width: 30% ;
+      height: 10%;
+      border-radius: 20%;
+     
+      /*  border-left: 20px solid var(--mainBlau); */
+     /*  border-right: 20px solid var(--dunkelGrau);  */
+      margin-bottom: 8rem;
+
+    }
+
+    .profilepic:hover {
+      content: url('../img/mefun.jpg');
+     
+      transform: scale(1);
+      transition: all .7s ease-in-out;
+     
+}
+  
+
+    .empty {
+      margin-top: 1rem;
+    margin-left: -1rem;
+    border-radius: 20%;
+    border: 10px var(--dunkelGrau);
+    /* width: 80%; */
+    /* background-color: #4E7FBF; */
+    height: 150px;
+    /* border-bottom-style: dashed; */
+    }
+
+    .empty svg {
+      width: 100%;
+      height: 127%;
+    }
+    
+
+    /* icons  */
+    .color1 {
+      font-size: 3rem;
+      color: var(--mainBlau);
+      margin-right: 3rem;
+      margin-top: 1rem;
+      
+    }
+
+    .color2 {
+    
+      color: var(--dunkelGrau);
+      margin-right: 3rem;
+      margin-top: 1rem;
+      font-size: 3rem;
+    }
+
+
+/*------------------ slider content intro ------------------------------*/
+
+
+
+.fulld {
+  width: 100%;
+/*  padding: 4rem 0; */
+}
+.slidersec iframe {
+  
+  
+  width: 100%;
+  height: 390px;
+  max-width: 100%;
+  max-height: 100%;
+ 
+  
+ /*  height: 100%; */
+
+
+}
+
+/* neu slide begin  */
+
+.slidersec {
+  background-color: var(--mainBlau);
+  padding-top: 2em;
+}
+
+/* 
+neu slide end  */
+
+
+
+
+.st-slider {
+  width: 100%;
+  border-top: var(--mainBlau) 5px solid;
+  background-color: var(--mainBlau);
+}
+.st-slider img{
+  width: 100%;
+}
+
+.slidersec {
+  width: 50%;
+  /* height: 100%; */
+}
+
+.slidersec img {
+  width: 100%;
+  /* height: 100%; */
+}
+
+/* .image {
+  width: 100%;
+  height: 200px;
+} */
+/* .radio { */
+  /*display: none;*/
+/* } */
+.images {
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.images-inner {
+  width: 500%;
+  transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+
+
+.image-slide {
+  width: 20%;
+  float: left;
+}
+.image-slide,
+.fake-radio,
+.radio-btn {
+  transition: all 0.5s ease-out;
+}
+/* .fake-radio {
+  float: right;
+} */
+
+
+
+
+/* Move slides overflowed container */
+#slide1:checked ~ .images .images-inner {
+  margin-left: 0;
+}
+#slide2:checked ~ .images .images-inner {
+  margin-left: -100%;
+}
+#slide3:checked ~ .images .images-inner {
+  margin-left: -200%;
+}
+#slide3:checked ~ .images .images-inner {
+  margin-left: -300%;
+}
+
+
+
+
+/* Color of bullets */
+#slide1:checked ~ div .fake-radio .radio-btn:nth-child(1),
+#slide2:checked ~ div .fake-radio .radio-btn:nth-child(2),
+#slide3:checked ~ div .fake-radio .radio-btn:nth-child(3)
+#slide3:checked ~ div .fake-radio .radio-btn:nth-child(4) {
+  background: var(--mainBlau);
+}
+
+.st-slider>input {
+  float: right;
+  visibility: hidden;
+}
+.radio-btn {
+  direction: rtl;
+  width: 9px;
+  height: 9px;
+  border-radius: 5px;
+  background: gray;
+  display: inline-block !important;
+  margin: 0 1px;
+  cursor:pointer;
+} 
+
+.radio-btn {
+  float: right;
+}
+/* Color of bullets - END
+
+
+
+
+/* Text of slides */
+#slide1:checked ~ .labels .label:nth-child(1),
+#slide2:checked ~ .labels .label:nth-child(2),
+#slide3:checked ~ .labels .label:nth-child(3) {
+  opacity: 1;
+}
+
+.label {
+  opacity: 0;
+  position: absolute;
+}
+/* Text of slides - END */
+
+
+
+/* Calculate AUTOPLAY for BULLETS */
+@keyframes bullet {
+  0%, 33.32333333333334%	{
+    background:var(--mainBlau);
+  }
+  33.333333333333336%, 100% {
+    background: gray;
+  }
+}
+
+
+#play1:checked ~ div .fake-radio .radio-btn:nth-child(1) {
+  animation: bullet 12300ms infinite -1000ms;
+}
+
+#play1:checked ~ div .fake-radio .radio-btn:nth-child(2) {
+  animation: bullet 12300ms infinite 3100ms;	
+}
+
+#play1:checked ~ div .fake-radio .radio-btn:nth-child(3) {
+  animation: bullet 12300ms infinite 7200ms;	
+}
+
+#play1:checked ~ div .fake-radio .radio-btn:nth-child(4) {
+  animation: bullet 12300ms infinite 7200ms;	
+}
+/* Calculate AUTOPLAY for BULLETS - END */
+
+
+
+
+/* Calculate AUTOPLAY for SLIDES */
+@keyframes slide {
+  0%, 25.203252032520325%	{ margin-left: 0; }
+  33.333333333333336%, 58.53658536585366%	{ margin-left: -100%; }
+  66.66666666666667%, 70.869918699187%	{ margin-left: -200%; }
+  71.66666666666667%, 91.869918699187%	{ margin-left: -300%; }
+}
+
+
+.st-slider > #play1:checked ~ .images .images-inner {
+  animation: slide 12300ms infinite;	
+}
+/* Calculate AUTOPLAY for SLIDES - END */
+
+
+
+
+
+/* Calculate AUTOPLAY for CAPTION */
+@keyframes caption {
+  0%, 33.32333333333334%	{
+    opacity: 1;
+  }
+  33.333333333333336%, 100% {
+    opacity: 0;
+  }
+}
+
+
+#play1:checked ~ .labels .label:nth-child(1) {
+  animation: caption 12300ms infinite -1000ms;
+}
+
+#play1:checked ~ .labels .label:nth-child(2) {
+  animation: caption 12300ms infinite 3100ms;	
+}
+
+#play1:checked ~ .labels .label:nth-child(3) {
+  animation: caption 12300ms infinite 7200ms;	
+}
+
+#play1:checked ~ .labels .label:nth-child(4) {
+  animation: caption 12300ms infinite -1000ms;
+}
+/* Calculate AUTOPLAY for CAPTION - END */
+
+
+.images-inner:hover, .images-inner:focus {
+ 
+  animation-play-state: paused;
+}
+
+
+
+
+/* ----------------------------photography section ------------------------- */
+
+.photography  {
+  border: dotted 2px var(--mainBlau);
+  position: relative;
+}
+
+.decop {
+  
+  position: absolute;
+  right: 0;
+  width: 100%;
+  
+  top: 286px;
+  z-index: -10;
+}
+
+
+.photography:hover img {
+  filter: grayscale(0);
+  transition: all .2s ease-in-out;
+
+}
+
+
+
+/* ------------------------design section  -----------------------------------*/
+
+#design:hover img {
+
+  filter: grayscale(0);
+  transition: all .2s ease-in-out;
+
+}
+
+#design {
+  position: relative;
+}
+
+
+/*---------------------------- videos section --------------------------------------- */
+
+#videos iframe {
+  filter: grayscale(100%);
+  height: 450px;
+
+}
+
+#videos:hover img {
+  filter: grayscale(0);
+  transition: all .2s ease-in-out;
+
+
+}
+
+#videos:hover iframe {
+  filter: grayscale(0);
+  transition: all .2s ease-in-out;
+
+
+}
+
+#videos {
+  position: relative;
+  border: dotted 2px var(--mainBlau);
+ 
+}
+
+
+/* 
+about section  -------------------------------------------------*/
+
+.academicbox {
+
+  display: flex;
+  flex-flow: column;
+  
+  background-color: var(--dunkelGrau);
+  justify-content: space-around;
+  border: 2px dotted var(--mainGrau);
+  
+    padding: 20px;
+  
+}
+
+.academic-experience table {
+  width: 100%;
+  
+}
+
+.professional table {
+  width: 100%;
+}
+
+.professional {
+  padding: 20px;
+ 
+  color: #ffffff;
+  background-color:var(--dunkelGrau);
+  border: 2px dotted var(--mainBlau);
+}
+
+.aboutbox {
+  display: flex;
+ flex-flow: column;
+  color: var(--mainGrau);
+  
+ 
+ 
+  background-color:var(--dunkelGrau);
+  
+  
+  padding: 20px;
+  
+}
+
+.aboutbox h3 {
+  color: var(--mainGrau);
+}
+
+.textabouot {
+  
+  
+  align-self: center;
+     color: var(--mainGrau);
+      font-size: 17px;
+     
+  }
+  .flex3 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row;
+    padding: 20px;
+    color: var(--mainGrau);
+    background-color:var(--dunkelGrau);
+    border: 2px dotted var(--mainBlau);
+  
+    
+    
+}
