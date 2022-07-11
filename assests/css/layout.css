@@ -51,8 +51,10 @@ Aufbau:
 
 body{
     background-color: var(--mainGrau);
-    font-family: new-hero, sans-serif !important;
+    font-family: new-hero, arial, sans-serif !important;
     color: var(--mainBlau);
+
+    
 
 
 }
@@ -62,7 +64,6 @@ body{
   background-color: var(--darkGrau);
   color: var(--mainGrau);
   padding-top: 3rem ;
-
   background: url(/assests/img/codebk.svg) no-repeat ;
  
   /* padding: 5rem ; */
@@ -96,7 +97,6 @@ h3 {
   padding: 1rem;
   font-size: 2rem;
   display: inline-block;
- 
   border: 20px dotted var(--mainBlau);
   color: var(--dunkelGrau);
   
@@ -160,9 +160,13 @@ hr {
 
 
 
-/* scroll color  */
+/* scroll color and behavior */
 .scrollable-element {
   scrollbar-color: var(--mainGrau) var(--dunkelGrau);
+}
+
+html {
+  scroll-behavior:smooth;
 }
 
 /* reset bootstrap headings  */ 
@@ -211,7 +215,7 @@ hr effect end  */
 .vrt {
   margin-top: 4rem;
   margin-bottom: 4rem;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 /*------------------ nav & header ------------------------------*/
@@ -720,6 +724,16 @@ h1 {
 .slidersec {
   background-color: var(--mainBlau);
   padding-top: 2em;
+  position: relative;
+}
+
+
+.slidersec::after {
+  position: absolute;
+  content: "mix slider (photography, videos, design";
+  right: 3px;
+  bottom: 2px;
+  color: var(--mainGrau);
 }
 
 /* 
@@ -1020,6 +1034,11 @@ about section  -------------------------------------------------*/
   
 }
 
+.academicbox h3 {
+  border: solid 1px var(--mainBlau); 
+  
+}
+
 .academic-experience table {
   width: 100%;
   
@@ -1035,6 +1054,11 @@ about section  -------------------------------------------------*/
   color: #ffffff;
   background-color:var(--dunkelGrau);
   border: 2px dotted var(--mainBlau);
+}
+
+.professional h3 {
+  border: solid 1px var(--mainBlau); 
+
 }
 
 .aboutbox {
@@ -1074,4 +1098,34 @@ about section  -------------------------------------------------*/
   
     
     
+}
+
+.tech h3 {
+  border: solid 1px var(--mainBlau); 
+}
+
+.lang h3{
+  border: solid 1px var(--mainBlau); 
+}
+
+.soft h3{
+  border: solid 1px var(--mainBlau); 
+}
+
+
+
+/* ---------------kontakt section ---------------------- */
+
+#kontakt {
+  padding: 1rem;
+}
+
+
+
+
+/*------------------- footer ------------------*/
+
+
+footer .bg-dark{
+  background-color: var(--mainBlau) !important;
 }
