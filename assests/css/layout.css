@@ -111,6 +111,20 @@ button {
 }
 
 
+/* sliders button  */
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  color: var(--mainBlau) !important;
+  background-color: var(--mainBlau);
+  
+
+}
+
+.carousel-control-next-icon:hover, .carousel-control-prev-icon:hover {
+ 
+  border: dotted 2px var(--mainGrau);
+
+}
+
 
 
 
@@ -140,7 +154,7 @@ p::selection {
 hr {
   border: 1px solid var(--mainBlau);
   width: 50%;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   direction: rtl;
   margin-left: 18rem;
   height: 5px;
@@ -160,13 +174,57 @@ hr {
 
 
 
-/* scroll color and behavior */
+/*-------------- scroll color and behavior ---------------*/
+
+
 .scrollable-element {
   scrollbar-color: var(--mainGrau) var(--dunkelGrau);
+
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background: var(--mainBlau);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--mainGrau);
+  box-shadow: 0 -100vh 0 100vh var(--dunkelGrau), 0 0 15px 5px var(--dunkelGrau);
 }
 
 html {
   scroll-behavior:smooth;
+}
+
+
+/* backtop with progress  */
+#progress {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--dunkelGrau);
+  cursor: pointer;
+}
+#progress-value {
+  display: block;
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background-color: var(--mainGrau);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  color: var(--dunkelGrau);
+}
+
+#progress:hover, #progress:focus , #progress:active  {
+  border: 2px dotted var(--mainBlau);
 }
 
 /* reset bootstrap headings  */ 
@@ -180,8 +238,9 @@ html {
 
 /* allgemein pics effect  */
 
-img , carousel, iframe {
+img ,  iframe {
   filter: grayscale(100%);
+  transition: all .2s ease-in-out;
 }
 
 /* img:hover , carousel:hover, iframe:hover {
@@ -246,7 +305,14 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 0.3rem;
+  transition: all .2s ease-in-out;
   
+}
+
+#logo:hover, #logo:active, #logo:focus  {
+
+  border: 2px dotted var(--mainGrau);
+  transition: all .2s ease-in-out;
 }
 
 
@@ -530,12 +596,15 @@ ol, ul {
   display: block;
   position: absolute;
   left: -150px;
+  transition: all .1s ease-in-out;
+  
+ 
 }
 
 .content-intro:hover .hiddenb { display: block;
   position: absolute;
   left: 50px;
-  transition: all .2s ease-in-out;
+  transition: all .3s ease-in-out;
   
   
   background-color: var(--mainBlau);
@@ -543,12 +612,12 @@ ol, ul {
 
   
  
-    color: var(--mainGrau);
-    transform: translateY(10px);
-transition: transform 0.2s, opacity 0.1s;
-transform: rotate(359deg);
-writing-mode: vertical-lr;
-font-size: xxx-large;
+  color: var(--mainGrau);
+  transform: translateY(10px);
+  transition: transform 0.2s, opacity 0.1s;
+  transform: rotate(359deg);
+  writing-mode: vertical-lr;
+  font-size: xxx-large;
 }
 
 
@@ -567,17 +636,93 @@ font-size: xxx-large;
 
 
 /* article wer bin ich -------- */
+
+/* ----------------- neu ani h1 */
+
+#container {
+  color:#999;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+ /*  padding-top:200px;  
+  position:fixed; */
+  width:100%;
+  bottom:45%;
+  display:block;
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:var(--mainGrau);
+  padding:4px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background: var(--mainBlau);
+}
+#flip div:first-child div {
+  background: var(--darkGrau);
+}
+#flip div:last-child div {
+  background: var(--dunkelGrau);
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+
+
+
+
+
 h1 {
     overflow: hidden;
     /*border-right: .15em solid #404040;
     */white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .10em;
-    animation:  typing 0.9s steps(21),                    
-                blinking 0.3s steps(1) ;
+    /* animation: */  /* typing 0.9s steps(21),                    
+                blinking 0.3s steps(1) ; */
+                /* tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both; */
     /*font-size: xx-large;
     */
 }
+
+@keyframes tracking-in-contract-bck-top {
+  0% {
+    letter-spacing: 1em;
+    transform: translateZ(400px) translateY(-300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+
 
 @keyframes typing {
     0%  {
@@ -639,9 +784,11 @@ h1 {
 
     /* profile pic --------- */
 
-
+    
 
      .boxpe img {
+      
+      
       margin-top: 1rem;
       width: 30% ;
       height: 10%;
@@ -650,6 +797,7 @@ h1 {
       /*  border-left: 20px solid var(--mainBlau); */
      /*  border-right: 20px solid var(--dunkelGrau);  */
       margin-bottom: 8rem;
+      transition: all .4s ease-in-out;
 
     }
 
@@ -658,7 +806,27 @@ h1 {
      
       transform: scale(1);
       transition: all .7s ease-in-out;
+      border: 2px dotted var(--mainBlau);
      
+}
+
+
+.boxpe {
+  position: relative;
+}
+
+
+.boxpe::after {
+  position: absolute;
+  content: "   ...• click hier •" ;
+  writing-mode: vertical-rl;
+  font-size: small;
+ 
+  top: 30px;
+  left: 0;
+  text-transform: uppercase;
+  color: var(--mainGrau);
+  
 }
   
 
@@ -695,6 +863,22 @@ h1 {
       margin-top: 1rem;
       font-size: 3rem;
     }
+
+    /* icons effect hover */
+
+    .piktossec a i {
+      transition: all .2s ease-in-out;
+
+    }
+
+    .piktossec a i:hover, i:active, i:focus {
+      border: 2px dotted var(--mainGrau);
+      transition: all .2s ease-in-out;
+      background-color: var(--darkGrau);
+
+    }
+
+    
 
 
 /*------------------ slider content intro ------------------------------*/
@@ -947,6 +1131,17 @@ neu slide end  */
 }
 
 
+/* font page link on slider  */
+
+.slidersec .carousel-item a {
+  color: var(--mainGrau);
+}
+
+.slidersec .carousel-item a:hover, .slidersec .carousel-item a:focus,.slidersec .carousel-item a:active {
+  background-color: var(--mainGrau);
+  color: var(--mainBlau);
+}
+
 
 
 /* ----------------------------photography section ------------------------- */
@@ -961,8 +1156,9 @@ neu slide end  */
   position: absolute;
   right: 0;
   width: 100%;
+  bottom:0;
   
-  top: 286px;
+  /* top: 286px; */
   z-index: -10;
 }
 
@@ -1120,12 +1316,155 @@ about section  -------------------------------------------------*/
   padding: 1rem;
 }
 
+#kontakt .btn-primary {
+  color: var(--mainGrau);
+  background-color: var(--mainBlau);
+  border-color:var(--mainBlau);
+  
+}
 
-
+#kontakt .btn-primary:hover , #kontakt .btn-primary:focus, #kontakt .btn-primary:active  {
+  color: var(--mainGrau);
+  background-color: var(--mainBlau);
+  border-color:var(--mainBlau);
+  opacity: 0.6;
+  
+}
 
 /*------------------- footer ------------------*/
 
 
 footer .bg-dark{
   background-color: var(--mainBlau) !important;
+  color: var(--mainGrau) !important;
+}
+
+.mb-4 a:hover {
+  color: var(--mainBlau) !important;
+}
+
+footer .text-center a:hover, footer .text-center a:focus, footer .text-center a:active {
+  border: dotted 2px var(--mainGrau);
+
+}
+
+
+
+/* js styling */
+
+.fade1 {
+	opacity: 0;
+}
+
+
+.fade-in { 
+	opacity: 1;
+	animation: fade-In ease 2s;
+    -moz-animation: fade-in 2s; /* Firefox */
+    -webkit-animation: fade-in 2s; /* Safari and Chrome */
+    -o-animation: fade-in 2s; /* Opera */
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fade-in { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fade-in { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fade-in { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* style loading  */
+
+
+
+.loader 
+{
+ position: fixed;
+ left: 0px;
+ top: 0px;
+ width: 100%;
+ height: 100%;
+ z-index: 9999;
+ background: /* url(/assests/img/mefun.jpg) */ 50% 50% no-repeat var(--mainBlau);
+}
+
+
+/* loading  */
+#lob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color:var(--mainGrau);
+}
+#lob span {
+  font-size: 80px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  line-height: 1;
+  mix-blend-mode: difference;
+}
+#lob::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  color: var(--mainGrau);
+  background-color: var(--mainGrau);
+  animation: move 4s linear infinite;
+  transition: 0.2s ease-in-out;
+}
+@keyframes move {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 100px);
+  }
+}
+
+#lob h1:last-child {
+  text-align: right;
+  margin-top: 3rem ;
+}
+
+#lob h1 {
+  margin-bottom: 3rem;
 }
